@@ -1,11 +1,11 @@
 import os
-import anthropic
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = anthropic.Anthropic(
-    api_key=os.getenv("ANTHROPIC_API_KEY")
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 SYSTEM_PROMPT = """You are a senior software engineer
@@ -26,15 +26,12 @@ Format your response in clear sections.
 Use simple English — the developer is a beginner."""
 
 def review_code(code: str, language: str) -> str:
-    message = client.messages.create(
-        model="claude-sonnet-4-20250514",
-        max_tokens=1500,
-        system=SYSTEM_PROMPT,
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
         messages=[
-            {
-                "role": "user",
-                "content": f"Please review this {language} code:\n\n{code}"
-            }
-        ]
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f"Please review this {language} code:\n\n{code}"}
+        ],
+        max_tokens=1500
     )
-    return message.content[0].text
+    return response.choices[0].message.content
