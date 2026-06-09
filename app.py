@@ -36,7 +36,7 @@ with col2:
         if not code_input or len(code_input.strip()) == 0:
             st.warning("Please paste some code first.")
         else:
-            with st.spinner("Claude is reviewing your code..."):
+            with st.spinner("Code is being reviewed, wait few seconds..."):
                 result = review_code(code_input, language)
             st.success("Review complete!")
             st.markdown(result)
