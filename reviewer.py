@@ -4,9 +4,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Groq(
-    api_key=os.getenv("GROQ_API_KEY")
-)
+MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+_api_key = os.getenv("GROQ_API_KEY")
+
+if not _api_key:
+    raise EnvironmentError(
+        "GROQ_API_KEY is not set. "
+        "Please add your key to the .env file."
+    )
+
+client = Groq(api_key=_api_key)
 
 SYSTEM_PROMPT = """You are a senior software engineer
 doing a thorough code review.
@@ -26,12 +33,27 @@ Format your response in clear sections.
 Use simple English — the developer is a beginner."""
 
 def review_code(code: str, language: str) -> str:
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"Please review this {language} code:\n\n{code}"}
-        ],
-        max_tokens=1500
-    )
-    return response.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": f"Please review this {language} code:\n\n{code}"
+                }
+            ],
+            max_tokens=1500,
+        )
+
+        return response.choices[0].message.content
+
+    except Exception as e:
+        error_type = type(e).__name__
+
+        return (
+            f"⚠️ Review failed ({error_type})\n\n"
+            f"Something went wrong while contacting the AI.\n"
+            f"Please check your API key and try again.\n\n"
+            f"Technical detail: {str(e)}"
+        )
