@@ -3,6 +3,7 @@ from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
+MAX_CODE_CHARS = int(os.getenv("MAX_CODE_CHARS", "8000"))
 
 MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 _api_key = os.getenv("GROQ_API_KEY")
@@ -33,6 +34,16 @@ Format your response in clear sections.
 Use simple English — the developer is a beginner."""
 
 def review_code(code: str, language: str) -> str:
+    if not code or not code.strip():
+        return "⚠️ No code provided. Please paste some code first."
+
+    if len(code) > MAX_CODE_CHARS:
+        return (
+            f"⚠️ Code is too long ({len(code):,} characters). "
+            f"Please keep it under {MAX_CODE_CHARS:,} characters "
+            f"for a focused review."
+        )
+
     try:
         response = client.chat.completions.create(
             model=MODEL_NAME,
