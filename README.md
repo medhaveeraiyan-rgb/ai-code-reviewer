@@ -2,7 +2,7 @@
 
 > AI-powered code review tool built with Streamlit and Groq LLaMA
 
-![screenshot](screenshot.png)
+![screenshot](Screenshot.png)
 
 ## Features
 
