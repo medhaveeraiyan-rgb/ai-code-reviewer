@@ -15,6 +15,14 @@
 
 Python · Streamlit · Groq API · streamlit-ace
 
+## Future Improvements
+
+- Review history
+- Multiple LLM providers
+- GitHub integration
+- Downloadable reports
+- Review analytics
+
 ## Setup
 
 ```bash
