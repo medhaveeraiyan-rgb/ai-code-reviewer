@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from groq import Groq
 from dotenv import load_dotenv
 
@@ -6,12 +7,17 @@ load_dotenv()
 MAX_CODE_CHARS = int(os.getenv("MAX_CODE_CHARS", "8000"))
 
 MODEL_NAME = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
-_api_key = os.getenv("GROQ_API_KEY")
+import streamlit as st
+
+_api_key = (
+    st.secrets.get("GROQ_API_KEY")
+    or os.getenv("GROQ_API_KEY")
+)
 
 if not _api_key:
     raise EnvironmentError(
         "GROQ_API_KEY is not set. "
-        "Please add your key to the .env file."
+        "Please configure it in Streamlit secrets or .env"
     )
 
 client = Groq(api_key=_api_key)
