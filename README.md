@@ -26,7 +26,7 @@ Python · Streamlit · Groq API · streamlit-ace
 ## Setup
 
 ```bash
-git clone https://github.com/Harini696/ai-code-reviewer.git
+git clone https://github.com/medhaveeraiyan-rgb/ai-code-reviewer.git
 cd ai-code-reviewer
 pip install -r requirements.txt
 streamlit run app.py
