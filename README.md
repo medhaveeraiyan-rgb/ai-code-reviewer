@@ -1,42 +1,113 @@
-# AI Code Reviewer
+🔍 AI Code Reviewer
+AI-powered code review using Groq LLaMA 3.3
 
-> AI-powered code review tool built with Streamlit and Groq LLaMA
+Analyze code for bugs, security vulnerabilities, performance issues, and style improvements in seconds.
+
+🌐 Live Demo
+
+👉 https://ai-code-reviewer-1306.streamlit.app/
+
+📸 Preview
+
+📸 Screenshot
 
 ![screenshot](Screenshot.png)
 
-## Features
+✨ Key Features
 
-- Syntax-highlighted code editor (8 languages)
-- Instant AI review powered by Groq LLaMA 3.3
-- Side-by-side code + review layout
-- Beginner-friendly feedback format
+✅ Syntax-highlighted code editor
 
-## Tech stack
+✅ Multi-language support
 
-Python · Streamlit · Groq API · streamlit-ace
+Python
+JavaScript
+Java
+C++
+C#
+Go
+Ruby
+Other languages
 
-## Future Improvements
+✅ AI-powered review using Groq LLaMA 3.3
 
-- Review history
-- Multiple LLM providers
-- GitHub integration
-- Downloadable reports
-- Review analytics
+✅ Detects:
 
-## Setup
+Bugs & logical errors
+Security vulnerabilities
+Performance bottlenecks
+Code style issues
 
-```bash
+✅ Beginner-friendly explanations
+
+✅ Download review reports
+
+✅ Docker support
+
+🏗️ How It Works
+
+Paste Code
+    ↓
+Select Language
+    ↓
+Groq LLaMA 3.3
+    ↓
+AI Analysis
+    ↓
+Review Report
+
+🛠️ Tech Stack
+
+Category	Technology
+Language	Python
+Frontend	Streamlit
+AI Model	Groq LLaMA 3.3
+Editor	streamlit-ace
+Deployment	Streamlit Community Cloud
+Containerization	Docker
+Version Control	Git & GitHub
+
+⚡ Quick Start
+
+Clone Repository
 git clone https://github.com/medhaveeraiyan-rgb/ai-code-reviewer.git
 cd ai-code-reviewer
+Install Dependencies
 pip install -r requirements.txt
+Configure API Key
+
+Create a .env file:
+
+GROQ_API_KEY=your_api_key_here
+Run Application
 streamlit run app.py
-```
 
-## Contributors
+🐳 Docker
 
-- [@Harini696](https://github.com/Harini696)
-- [@medhaveeraiyan-rgb](https://github.com/medhaveeraiyan-rgb)
+Build Image:
 
-## License
+docker build -t ai-code-reviewer .
 
-MIT
+Run Container:
+
+docker run -p 8501:8501 --env-file .env ai-code-reviewer
+
+🚀 Roadmap
+Review History
+
+Code Quality Score
+
+PDF Export
+
+GitHub Integration
+
+Multiple LLM Providers
+
+Analytics Dashboard
+
+👥 Contributors
+@medhaveeraiyan-rgb
+@Harini696
+
+📄 License
+
+MIT License
