@@ -9,8 +9,6 @@ Analyze code for bugs, security vulnerabilities, performance issues, and style i
 
 📸 Preview
 
-📸 Screenshot
-
 ![screenshot](Screenshot.png)
 
 ✨ Key Features
