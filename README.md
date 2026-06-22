@@ -1,48 +1,55 @@
-🔍 AI Code Reviewer
-AI-powered code review using Groq LLaMA 3.3
+# 🔍 AI Code Reviewer
 
-Analyze code for bugs, security vulnerabilities, performance issues, and style improvements in seconds.
+### AI-powered code review using Groq LLaMA 3.3
 
-🌐 Live Demo
+Analyze code for **bugs**, **security vulnerabilities**, **performance issues**, and **style improvements** in seconds.
+
+## 🌐 Live Demo
 
 👉 https://ai-code-reviewer-1306.streamlit.app/
 
-📸 Preview
+## 📸 Preview
 
-![screenshot](Screenshot.png)
 
-✨ Key Features
+![AI Code Reviewer](screenshot.png)
 
-✅ Syntax-highlighted code editor
+---
 
-✅ Multi-language support
+## ✨ Key Features
 
-Python
-JavaScript
-Java
-C++
-C#
-Go
-Ruby
-Other languages
+### ✅ Syntax-highlighted code editor
 
-✅ AI-powered review using Groq LLaMA 3.3
+### ✅ Multi-language support
 
-✅ Detects:
+* Python
+* JavaScript
+* Java
+* C++
+* C#
+* Go
+* Ruby
+* Other Languages
 
-Bugs & logical errors
-Security vulnerabilities
-Performance bottlenecks
-Code style issues
+### ✅ AI-powered review using Groq LLaMA 3.3
 
-✅ Beginner-friendly explanations
+### ✅ Detects
 
-✅ Download review reports
+* Bugs & logical errors
+* Security vulnerabilities
+* Performance bottlenecks
+* Code style issues
 
-✅ Docker support
+### ✅ Beginner-friendly explanations
 
-🏗️ How It Works
+### ✅ Download review reports
 
+### ✅ Docker support
+
+---
+
+## 🏗️ How It Works
+
+```text
 Paste Code
     ↓
 Select Language
@@ -52,60 +59,93 @@ Groq LLaMA 3.3
 AI Analysis
     ↓
 Review Report
+```
 
-🛠️ Tech Stack
+---
 
-Category	Technology
-Language	Python
-Frontend	Streamlit
-AI Model	Groq LLaMA 3.3
-Editor	streamlit-ace
-Deployment	Streamlit Community Cloud
-Containerization	Docker
-Version Control	Git & GitHub
+## 🛠️ Tech Stack
 
-⚡ Quick Start
+| Category         | Technology                |
+| ---------------- | ------------------------- |
+| Language         | Python                    |
+| Frontend         | Streamlit                 |
+| AI Model         | Groq LLaMA 3.3            |
+| Editor           | streamlit-ace             |
+| Deployment       | Streamlit Community Cloud |
+| Containerization | Docker                    |
+| Version Control  | Git & GitHub              |
 
-Clone Repository
+---
+
+## ⚡ Quick Start
+
+### Clone Repository
+
+```bash
 git clone https://github.com/medhaveeraiyan-rgb/ai-code-reviewer.git
 cd ai-code-reviewer
-Install Dependencies
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Configure API Key
+```
 
-Create a .env file:
+### Configure API Key
 
+Create a `.env` file:
+
+```env
 GROQ_API_KEY=your_api_key_here
-Run Application
+```
+
+### Run Application
+
+```bash
 streamlit run app.py
+```
 
-🐳 Docker
+---
 
-Build Image:
+## 🐳 Docker
 
+### Build Image
+
+```bash
 docker build -t ai-code-reviewer .
+```
 
-Run Container:
+### Run Container
 
+```bash
 docker run -p 8501:8501 --env-file .env ai-code-reviewer
+```
 
-🚀 Roadmap
-Review History
+---
 
-Code Quality Score
+## 🚀 Roadmap
 
-PDF Export
+*  Review History
+*  Code Quality Score
+*  PDF Export
+*  GitHub Integration
+*  Multiple LLM Providers
+*  Analytics Dashboard
 
-GitHub Integration
+---
 
-Multiple LLM Providers
+## 👥 Contributors
 
-Analytics Dashboard
+* **Medha V** (@medhaveeraiyan-rgb)
+* **Harini** (@Harini696)
 
-👥 Contributors
-@medhaveeraiyan-rgb
-@Harini696
+---
 
-📄 License
+## 📄 License
 
 MIT License
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
