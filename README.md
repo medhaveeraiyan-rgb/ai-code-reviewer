@@ -11,7 +11,7 @@ Analyze code for **bugs**, **security vulnerabilities**, **performance issues**,
 ## 📸 Preview
 
 
-![AI Code Reviewer](screenshot.png)
+![screenshot](Screenshot.png)
 
 ---
 
